@@ -152,42 +152,12 @@
         }
         function sortPricesToHigh(arr){
             arr.sort(function (a, b) {
-            if(typeof a.price === 'object'){
-                a = a.price.newUan;
-            } else if(typeof a.price === 'string'){
-                a = a.price;
-            } else {
-                alert("Некорректно заполнено поле цена");
-            }
-
-            if(typeof b.price === 'object'){
-                b = b.price.newUan;
-            } else if(typeof b.price === 'string'){
-                b = b.price;                
-            } else {
-                alert("Некорректно заполнено поле цена");
-            }
-            return +a.replace(/\D/g, "") > +b.replace(/\D/g, "") ? 1 : -1});
+                return +a.price.replace(/\D/g, "") > +b.price.replace(/\D/g, "") ? 1 : -1});
         }
 
         function sortPricesToLow(arr){
             arr.sort(function (a, b) {
-            if(typeof a.price === 'object'){
-                a = a.price.newUan;
-            } else if(typeof a.price === 'string'){
-                a = a.price;
-            } else {
-                alert("Некорректно заполнено поле цена");
-            }
-
-            if(typeof b.price === 'object'){
-                b = b.price.newUan;
-            } else if(typeof b.price === 'string'){
-                b = b.price;                
-            } else {
-                alert("Некорректно заполнено поле цена");
-            }
-            return +a.replace(/\D/g, "") > +b.replace(/\D/g, "") ? -1 : 1});
+            return +a.price.replace(/\D/g, "") > +b.price.replace(/\D/g, "") ? -1 : 1});
         }
         let filteredArr = [];
         function filterIngredients(checkedIngredientes, arr){
